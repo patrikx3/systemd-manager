@@ -61,6 +61,7 @@ module.exports = (settings) => {
         lines.forEach((line) => {
             const [, unit, , load, , active , , sub, , description ]= parseRow.exec(line);
             dbUpdate[unit] = {
+                unit: unit,
                 load: load,
                 active: active,
                 sub: sub,
@@ -104,6 +105,16 @@ module.exports = (settings) => {
         return JSON.parse(JSON.stringify(obj));
     }
 
+    const excludePattern = new RegExp(settings.excluded);
+    const excluded = (isExcludable) => {
+        const excludedResult = excludePattern.test(isExcludable.unit);
+        if (excludedResult) {
+            status('excluded unit')
+            //console.log(isExcludable);
+        }
+        return excludedResult;
+    }
+
     /**
      * The watch program.
      */
@@ -133,9 +144,9 @@ module.exports = (settings) => {
                     removed: {}
                 }
                 Object.keys(dbUpdate).forEach((unit) => {
-                    if (db[unit] === undefined) {
+                    if (db[unit] === undefined && !excluded(dbUpdate[unit])) {
                         watchUpdate.added[unit] = clone(dbUpdate[unit]);
-                    } else if(JSON.stringify(db[unit]) !== JSON.stringify(dbUpdate[unit])) {
+                    } else if(JSON.stringify(db[unit]) !== JSON.stringify(dbUpdate[unit]) && !excluded(dbUpdate[unit])) {
                         watchUpdate.changes[unit] = {
                             'old': clone(db[unit]),
                             'new': clone(dbUpdate[unit]),
@@ -143,7 +154,12 @@ module.exports = (settings) => {
                     }
                     delete db[unit];
                 });
-                watchUpdate.removed = clone(db);
+                watchUpdate.removed = {};
+                Object.keys(db).forEach((unit) => {
+                    if (!excluded(db[unit])) {
+                        watchUpdate.removed[unit] = clone(db[unit]);
+                    }
+                })
                 db = dbUpdate;
                 let sendChanges = false;
                 Object.keys(watchUpdate).forEach((watchUpdateKey) => {
@@ -152,12 +168,14 @@ module.exports = (settings) => {
                     }
                 })
                 if (sendChanges === true) {
+                    status('new update found - sending e-mail')
                     mail.system.send(`${settings.mail.prefix}: CHANGED`, watchUpdate );
                 }
             })
             .catch((error) => {
                 console.error(error);
-                mail.system.send(`${settings.mail.prefix}: ERROR`, error );
+                mail.system.send(`${settings.mail.prefix}: ERROR`, JSON.stringify(error, ["message", "arguments", "type", "name"], 2)
+                );
             })
             .then(() => {
                 if (timeLastPing == undefined || Date.now() - timeLastPing > timePing ) {

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const Watchdog = require('./src');
+const Watchdog = require('./index');
 const watchdog = Watchdog(require('./dev.json'));
 watchdog.run();
