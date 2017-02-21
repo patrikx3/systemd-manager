@@ -16,7 +16,7 @@ Right now it polls, so that it gets all changes. It task about 30-50 millisecond
 ```bash
 git clone https://github.com/patrikx3/systemd-watchdog-notify.git
 cd systemd-watchdog-notify
-./watchdog ./dev.json
+./watchdog ./watchdog.json
 ```
 
 ## Settings
