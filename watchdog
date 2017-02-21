@@ -1,5 +1,14 @@
 #!/usr/bin/env node
 
+const process = require('process');
+if (process.argv.length < 3) {
+    console.log(`
+Please use an argument for the settings.
+For example:
+./watchdog ./dev.json
+`);
+    return;
+}
 const Watchdog = require('./index');
-const watchdog = Watchdog(require('./dev.json'));
+const watchdog = Watchdog(require(process.argv[2]));
 watchdog.run();
