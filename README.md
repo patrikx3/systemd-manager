@@ -10,8 +10,7 @@
 
 # SystemD Watchdog Notify 
 This notifies changes in the SystemD via e-mail.
-Right now it polls, so that it gets all changes. It task about 30-50 milliseconds per run on my 3.3 GHz Pentium 2 cores, it is nothing instead tons of functions. 
-
+Right now it polls, so that it gets all changes. It task about 30-50 milliseconds per run on my 3.3 GHz Pentium 2 cores, it is nothing instead tons of functions. All automatic, requires email and a few tweaks as you want.
 
 
 

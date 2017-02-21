@@ -38,3 +38,4 @@ jspm_packages
 
 systemd-watchdog-notify.iws
 /build
+/dev.json
