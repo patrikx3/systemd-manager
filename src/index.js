@@ -1,9 +1,10 @@
+const exec = require('child_process').exec;
+const ms = require('millisecond');
+const Mail = require('./mail')
+const moment = require('moment');
+
 module.exports = (settings) => {
 
-    const exec = require('child_process').exec;
-    const ms = require('millisecond');
-
-    const Mail = require('./mail')
     const mail = Mail(settings);
 
     const parseRow = /^([^\s]+)([\s]+)([^\s]+)([\s]+)([^\s]+)([\s]+)([^\s]+)([\s]+)(.+)$/;
@@ -176,6 +177,7 @@ module.exports = (settings) => {
                 })
                 if (sendChanges === true) {
                     status('new update found - sending e-mail')
+                    watchUpdate.moment = moment().format(settings.moment);
                     mail.system.send(`${settings.mail.prefix}: CHANGED`, watchUpdate );
                 }
             })
