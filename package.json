@@ -1,9 +1,9 @@
 {
     "name": "systemd-watchdog-notify",
     "corifeus": {
-        "time": "2/21/2017, 5:41:42 PM"
+        "time": "2/21/2017, 5:56:23 PM"
     },
-    "version": "1.0.11-8",
+    "version": "1.0.13-9",
     "description": "SystemD Watchdog Notify",
     "main": "index.js",
     "dependencies": {

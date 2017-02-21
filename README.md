@@ -19,15 +19,19 @@ cd systemd-watchdog-notify
 ./watchdog ./dev.json
 ```
 
-## Settings 
+## Settings
+```types```: Array, can be empty, actual ```man systemctl``` type.  
+
+```nodemailer.config```: Exact nodemailer config, any of that.
+
+```interval, ping```: Uses npm ```milliseconds``` framework for turn into actual milliseconds from a string.
+
 ```json
 {
-  // you can ommit
-  "test": true,
+  "excluded-pattern": "is a RegExp, you can omit this or exclude actually",
   "service": "p3x-watchdog",
   "interval": "1 minute",
   "ping": "2 hours",
-  // you can have empty Array
   "types": [
     "service"
   ],
@@ -38,7 +42,6 @@ cd systemd-watchdog-notify
     "to": "try@me.tk",
     "from": "me@with.you"
   },
-  // this is basically nodemailer settings, whateve you want
   "nodemailer": {
     "config": {
       "host": "mail.server.org",
@@ -56,7 +59,7 @@ cd systemd-watchdog-notify
 ## Using from code
 ```javascript
 const Watchdog = require('systemd-watchdog-notify');
-const settings = require('watchdog.json');
+const settings = require('./watchdog.json');
 const watchdog = Watchdog(settings);
 watchdog.run();
 ```
