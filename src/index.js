@@ -3,7 +3,7 @@ module.exports = (settings) => {
     const exec = require('child_process').exec;
     const ms = require('millisecond');
 
-    const Mail = require('mail')
+    const Mail = require('./mail')
     const mail = Mail(settings);
 
     const parseRow = /^([^\s]+)([\s]+)([^\s]+)([\s]+)([^\s]+)([\s]+)([^\s]+)([\s]+)(.+)$/;
@@ -12,7 +12,7 @@ module.exports = (settings) => {
     if (settings.types.length > 0) {
         types = `--type=${settings.types.join(',')}`;
     }
-    const options = settings.watchdog.options || '';
+    const options = settings.options || '';
     const command = `systemctl --plain --no-pager --no-legend ${options} ${types}`;
 // systemctl --state=not-found --all
 
@@ -40,7 +40,7 @@ module.exports = (settings) => {
 
     status(`started`);
     showStatus();
-    if (lib.isTest) {
+    if (settings.test) {
         interval = 3000;
         timePing = 3000;
         status(`TEST MODE`);
@@ -76,7 +76,9 @@ module.exports = (settings) => {
      */
     const update = () => {
         return new Promise((resolve, reject) => {
-            exec(command, settings.exec.options,  (error, stdout, stderr) => {
+            exec(command, {
+                maxBuffer: 10 * 1024 * 1024
+            },  (error, stdout, stderr) => {
                 if (error) {
                     reject(error);
                     return;
