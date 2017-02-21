@@ -1,0 +1,36 @@
+{
+    "name": "systemd-watchdog-notify",
+    "corifeus": {
+        "time": "2/21/2017, 3:49:55 PM"
+    },
+    "version": "1.0.2-1",
+    "description": "SystemD Watchdog Notify",
+    "main": "index.js",
+    "dependencies": {
+        "millisecond": "^0.1.2",
+        "nodemailer": "^3.1.3"
+    },
+    "devDependencies": {
+        "corifeus-builder": "^1.0.216-136"
+    },
+    "scripts": {
+        "test": "grunt mocha_istanbul"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/patrikx3/systemd-watchdog-notify.git"
+    },
+    "keywords": [
+        "systemd",
+        "systemd-service",
+        "watchdog",
+        "notify",
+        "linux"
+    ],
+    "author": "Patrik Laszlo <alabard@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/patrikx3/systemd-watchdog-notify/issues"
+    },
+    "homepage": "https://github.com/patrikx3/systemd-watchdog-notify#readme"
+}
