@@ -20,8 +20,9 @@ module.exports = (settings) => {
     let timeLastPing;
 
     let timePing = ms(settings.ping);
+    let timePingString = settings.ping;
     let interval = ms(settings.interval)
-
+    let intervalString = settings.interval;
 
     const showStatus = () => {
         if (settings.types.length === 0 ) {
@@ -29,8 +30,8 @@ module.exports = (settings) => {
         } else {
             status(`watchdog type(s): ${settings.types.join(',')}`)
         }
-        status(`ping: ${timePing} ms - ${settings.ping}`);
-        status(`interval: ${interval} ms - ${settings.interval}`);
+        status(`ping: ${timePingString}`);
+        status(`interval: ${intervalString}`);
         status(`command: ${command}`);
     }
 
@@ -39,13 +40,14 @@ module.exports = (settings) => {
     };
 
     status(`started`);
-    showStatus();
     if (settings.test) {
         interval = 3000;
+        intervalString = interval + ' ms';
         timePing = 3000;
+        timePingString = 3000 + ' ms';
         status(`TEST MODE`);
-        showStatus();
     }
+    showStatus();
 
 
     /**
@@ -105,8 +107,13 @@ module.exports = (settings) => {
         return JSON.parse(JSON.stringify(obj));
     }
 
-    const excludePattern = new RegExp(settings.excluded);
+    let excludePattern;
     const excluded = (isExcludable) => {
+        if (settings['excluded-pattern'] === undefined) {
+            return false;
+        } else if (excludePattern === undefined) {
+            excludePattern = new RegExp(settings['excluded-pattern'])
+        }
         const excludedResult = excludePattern.test(isExcludable.unit);
         if (excludedResult) {
             status('excluded unit')
@@ -179,7 +186,7 @@ module.exports = (settings) => {
             })
             .then(() => {
                 if (timeLastPing == undefined || Date.now() - timeLastPing > timePing ) {
-                    status(`ping - ${Object.keys(db).length} items - every ${settings.ping}`);
+                    status(`ping - ${Object.keys(db).length} items - every ${timePingString}`);
                     //console.log(db);
                     timeLastPing = Date.now();
                 }
