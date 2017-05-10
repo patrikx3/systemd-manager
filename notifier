@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+const lib = require('./src/lib');
+const settings = lib.getSettings();
+if (settings === false) {
+    return;
+}
+
+const boot = require('./src/dbus/boot');
+boot(settings);
+
+const notifier = require('./src/notifier');
+notifier(settings);
+

@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const lib = require('./src/lib');
+const settings = lib.getSettings();
+if (settings === false) {
+    return;
+}
+
+const Watchdog = require('./src/watchdog');
+const watchdog = Watchdog(settings);
+watchdog.run();

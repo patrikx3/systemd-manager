@@ -1,0 +1,50 @@
+{
+    "name": "p3x-systemd-manager",
+    "corifeus": {
+        "prefix": "p3x-",
+        "time": "5/6/2017, 5:55:32 PM",
+        "time-stamp": 1494086132956,
+        "publish": true,
+        "type": "p3x"
+    },
+    "version": "1.1.194-192",
+    "description": "SystemD Manager, watchdog, notifier and service",
+    "main": "index.js",
+    "dependencies": {
+        "corifeus-utils": "^1.1.100-140",
+        "dbus": "^1.0.0",
+        "millisecond": "^0.1.2",
+        "moment": "^2.18.1",
+        "nodemailer": "^4.0.1"
+    },
+    "devDependencies": {
+        "corifeus-builder": "^1.7.504-501"
+    },
+    "scripts": {
+        "test": "dbus-launch grunt mocha_istanbul"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/patrikx3/systemd-manager.git"
+    },
+    "keywords": [
+        "systemd",
+        "systemd-service",
+        "watchdog",
+        "notify",
+        "linux",
+        "manager",
+        "service",
+        "dbus",
+        "notifier"
+    ],
+    "author": "Patrik Laszlo <alabard@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/patrikx3/systemd-manager/issues"
+    },
+    "homepage": "https://patrikx3.github.io/systemd-manager/",
+    "engines": {
+        "node": ">=7.8.0"
+    }
+}
