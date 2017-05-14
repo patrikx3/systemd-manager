@@ -2,23 +2,22 @@
     "name": "p3x-systemd-manager",
     "corifeus": {
         "prefix": "p3x-",
-        "time": "5/6/2017, 5:55:32 PM",
-        "time-stamp": 1494086132956,
         "publish": true,
-        "type": "p3x"
+        "type": "p3x",
+        "code": "Flap"
     },
-    "version": "1.1.194-192",
+    "version": "1.1.199-2",
     "description": "SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^1.1.100-140",
+        "corifeus-utils": "^1.1.134-24",
         "dbus": "^1.0.0",
         "millisecond": "^0.1.2",
         "moment": "^2.18.1",
         "nodemailer": "^4.0.1"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.7.504-501"
+        "corifeus-builder": "^1.7.552-27"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul"
@@ -43,7 +42,7 @@
     "bugs": {
         "url": "https://github.com/patrikx3/systemd-manager/issues"
     },
-    "homepage": "https://patrikx3.github.io/systemd-manager/",
+    "homepage": "https://pages.corifeus.tk/systemd-manager",
     "engines": {
         "node": ">=7.8.0"
     }

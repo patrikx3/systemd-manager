@@ -1,21 +1,20 @@
 [//]: #@corifeus-header
 
-[![Build Status](https://travis-ci.org/patrikx3/systemd-manager.svg?branch=master)](https://travis-ci.org/patrikx3/systemd-manager)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/?branch=master)  [![Trello](https://img.shields.io/badge/Trello-p3x-026aa7.svg)](https://trello.com/b/gqKHzZGy/p3x)
 
-  
-[![NPM](https://nodei.co/npm/p3x-systemd-manager.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/p3x-systemd-manager/)
-------
+---
 
 # SystemD Manager, watchdog, notifier and service
 
 ### Node Version Requirement 
-``` >=7.8.0 ```  
+``` 
+>=7.8.0 
+```  
    
 The ```async``` and ```await``` keywords are required.
 
-Install NodeJs:  
-https://nodejs.org/en/download/package-manager/  
-
+Install NodeJs:    
+https://nodejs.org/en/download/package-manager/    
+  
 # Description
 
 
@@ -174,7 +173,7 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 [//]: #@corifeus-footer
 
 ---
-[**P3X-SYSTEMD-MANAGER**](https://patrikx3.github.com/systemd-manager) Build v1.1.194-192 on 5/6/2017, 5:55:32 PM
+[**P3X-SYSTEMD-MANAGER**](https://patrikx3.github.com/systemd-manager) Build v1.1.195-4
 
 by [Patrik Laszlo](http://patrikx3.tk) 
 
