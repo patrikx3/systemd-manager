@@ -189,7 +189,7 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 [//]: #@corifeus-footer
 
 ---
-[**P3X-SYSTEMD-MANAGER**](https://patrikx3.github.com/systemd-manager) Build v1.1.225-28
+[**P3X-SYSTEMD-MANAGER**](https://patrikx3.github.com/systemd-manager) Build v1.1.226-29
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
 
