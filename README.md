@@ -1,23 +1,39 @@
 [//]: #@corifeus-header
 
+  [![Build Status](https://travis-ci.org/patrikx3/systemd-manager.svg?branch=master)](https://travis-ci.org/patrikx3/systemd-manager)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/?branch=master) 
 
+  
+[![NPM](https://nodei.co/npm/p3x-systemd-manager.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/p3x-systemd-manager/)
 ---
 
+ 
 # SystemD Manager, watchdog, notifier and service
+
+## Issues / Support
+This is an open source project. Time is a precious thing, so I have rarely time to give support and fix issues for someone else. I fix a bug, when I have an error that I need. If you got an issue, error or bug, I hope someone will have time to do it for you, otherwise, you are on your own.
+
+Though, if I know the solution, I will tell you. Besides, core errors will be fixed by me.
+
+***If you want to extend, fix bugs or add in new features, I promptly merge pull requests or you can become a ```patrikx3``` member.***
 
 ### Node Version Requirement 
 ``` 
 >=7.8.0 
 ```  
    
+### Built on Node 
+``` 
+v7.10.0
+```   
+   
 The ```async``` and ```await``` keywords are required.
 
 Install NodeJs:    
 https://nodejs.org/en/download/package-manager/    
   
-# Description
+# Description  
 
-
+                        
 [//]: #@corifeus-header:end
 
 
@@ -173,8 +189,9 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 [//]: #@corifeus-footer
 
 ---
-[**P3X-SYSTEMD-MANAGER**](https://patrikx3.github.com/systemd-manager) Build v1.1.195-4
+[**P3X-SYSTEMD-MANAGER**](https://patrikx3.github.com/systemd-manager) Build v1.1.222-25
 
-by [Patrik Laszlo](http://patrikx3.tk) 
+[Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
+
 
 [//]: #@corifeus-footer:end

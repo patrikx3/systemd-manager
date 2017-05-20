@@ -23,7 +23,9 @@ build:
       - sudo apt update -y
       - sudo apt-get install -y gcc-4.8
       - sudo apt-get install -y g++-4.8
+      - sudo apt-get install -y libdbus-1-dev
       - sudo apt-get install -y libglib2.0-dev
+      - sudo apt-get install -y dbus
       - npm install -g node-gyp
       - npm install -g grunt-cli
       - git config remote.origin.url

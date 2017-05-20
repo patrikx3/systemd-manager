@@ -1,4 +1,3 @@
-# not me adding
 /node_modules
 
 # need to allow ts for awesome=typscript-loader
@@ -7,3 +6,9 @@
 /settings.json
 /yarn.lock
 /build
+
+
+
+.idea/workspace.xml
+.idea/tasks.xml
+
