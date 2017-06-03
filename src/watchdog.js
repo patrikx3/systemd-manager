@@ -44,10 +44,10 @@ module.exports = (settings) => {
                     return;
                 }
                 if (stderr !== '') {
-                    reject({
+                    reject(new Error({
                         stderr: stderr,
                         stout: stdout,
-                    });
+                    }));
                     return;
                 }
                 resolve(parseStatus(stdout));
