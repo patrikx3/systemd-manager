@@ -12,17 +12,6 @@ module.exports = (settings) => {
     const transporter = nodemailer
         .createTransport(settings.nodemailer.config);
 
-    let verified = false;
-    transporter.verify()
-        .then(() => {
-            console.log('Mail is working.');
-            verified = true;
-        })
-        .catch((error) => {
-            console.log('Mail is not working.', error);
-            verified = false;
-        });
-
     const send = (from, to, subject, body) => {
         if (body === undefined) {
             body = subject;
