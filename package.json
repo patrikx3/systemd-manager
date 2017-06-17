@@ -10,14 +10,14 @@
     "description": "SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^1.1.328-18",
+        "corifeus-utils": "^1.1.332-26",
         "dbus": "^1.0.0",
         "millisecond": "^0.1.2",
         "moment": "^2.18.1",
         "nodemailer": "^4.0.1"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.7.660-16"
+        "corifeus-builder": "^1.7.661-19"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul"
