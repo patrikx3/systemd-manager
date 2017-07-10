@@ -185,8 +185,8 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 
 ---
 
-[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.tk/systemd-manager) Build v1.1.269-26
+[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.280-32
 
-[Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
+[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
 [//]: #@corifeus-footer:end
