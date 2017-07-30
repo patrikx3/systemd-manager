@@ -6,18 +6,18 @@
         "type": "p3x",
         "code": "Flap"
     },
-    "version": "1.1.287-42",
+    "version": "1.1.291-44",
     "description": "SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^1.1.369-67",
+        "corifeus-utils": "^1.1.374-69",
         "dbus": "^1.0.0",
         "millisecond": "^0.1.2",
         "moment": "^2.18.1",
         "nodemailer": "^4.0.1"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.7.710-52"
+        "corifeus-builder": "^1.7.715-54"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul"
