@@ -3,16 +3,14 @@ const os = require('os');
 const moment = require('moment');
 
 let singletonInstance;
+
 module.exports = (settings) => {
 
     if (settings.nodemailer.singleton && singletonInstance !== undefined) {
         return singletonInstance;
     }
 
-    const transporter = nodemailer
-        .createTransport(settings.nodemailer.config);
-
-    const send = (from, to, subject, body) => {
+    const send = async (from, to, subject, body) => {
         if (body === undefined) {
             body = subject;
             subject = '';
@@ -45,14 +43,15 @@ ${body}
             text: body
         };
         console.log(`send new mail subject: ${subject}`);
-        transporter.sendMail(message)
-            .then((info) => {
-                console.log(info.response);
-            })
-            .catch((error) => {
-                console.log(`send error email`);
-                console.error(error);
-            });
+        try {
+            let transporter = nodemailer.createTransport(settings.nodemailer.config);
+            const info = await transporter.sendMail(message);
+            console.log(info.response);
+            transporter.close();
+        } catch (e) {
+            console.log(`send error email`, message);
+            console.error(e, message);
+        }
     }
 
     const factory = {
