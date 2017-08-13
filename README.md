@@ -18,7 +18,7 @@ This is an open source project. Just code.
    
 ### Built on Node 
 ``` 
-v8.2.1
+v8.3.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -185,7 +185,7 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 
 ---
 
-[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.304-68
+[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.309-73
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
