@@ -71,7 +71,7 @@ npm install p3x-systemd-manager --save
 #!/usr/bin/env node
 const systemd = require('p3x-systemd-manager');
 const settings = systemd.lib.getSettings();
-if (settings === false) {
+if (settings === false) {t
     return;
 }
 systemd.boot(settings);
@@ -185,7 +185,7 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 
 ---
 
-[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.370-119
+[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.376-126
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
