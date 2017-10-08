@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-  [![Build Status](https://travis-ci.org/patrikx3/.svg?branch=master)](https://travis-ci.org/patrikx3/)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3//badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3//?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3//badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3//?branch=master) 
+  [![Build Status](https://travis-ci.org/patrikx3/systemd-manager.svg?branch=master)](https://travis-ci.org/patrikx3/systemd-manager)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/systemd-manager/?branch=master) 
 
   
 [![NPM](https://nodei.co/npm/p3x-systemd-manager.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/p3x-systemd-manager/)
