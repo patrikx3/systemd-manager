@@ -15,7 +15,7 @@
         "dbus": "^1.0.1",
         "millisecond": "^0.1.2",
         "moment": "^2.19.1",
-        "nodemailer": "^4.2.0"
+        "nodemailer": "^4.3.0"
     },
     "devDependencies": {
         "corifeus-builder": "^1.7.930-190"
