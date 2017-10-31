@@ -7,7 +7,7 @@
 ---
 
  
-# SystemD Manager, watchdog, notifier and service
+# SystemD Manager, watchdog, notifier and service  
 
 This is an open source project. Just code.
 
@@ -185,9 +185,11 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 
 ---
 
-[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.443-169 
+[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.450-174 
 
-[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted) 
+
+
  
 
 [//]: #@corifeus-footer:end
