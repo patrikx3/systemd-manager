@@ -25,7 +25,7 @@ const install = async() => {
     }
 
     console.warn(`You probably might need a c++11 if it is old,`)
-    await utils.childProcess.exec(`sudo apt-get install libdbus-1-dev libglib2.0-dev`, true)
+    await utils.childProcess.exec(`apt-get install libdbus-1-dev libglib2.0-dev`, true)
 
     console.log(`Found platform: ${platformSearch} and architecture ${archSearch}`);
 
