@@ -55,7 +55,7 @@ References:
 
 When you install, it will ask for ```root```, because install the dependencies with ```apt```.
 
-This is the install automatic:
+By now the install is automatic (not needed anymore, but these are the libs that the program uses):
 ```bash
 #you probably might need a c++11 if it is old, 
 #for additional requirements check out .travis.yml
@@ -64,11 +64,11 @@ sudo apt-get install libdbus-1-dev libglib2.0-dev
 
 ### Using from code
 
+Please do not use ```yarn```, because it asks for ```sudo``` and prompt (unless you are ```root```).
+
 ```bash
 npm install p3x-systemd-manager --save
 ```
-
-Please do not use ```yarn```, because it asks for ```sudo```.
 
 #### SystemD DBus Notifier
 
