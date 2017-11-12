@@ -7,7 +7,7 @@
         "code": "Flap",
         "nodejs": "v9.1.0"
     },
-    "version": "1.1.491-209",
+    "version": "1.1.493-214",
     "description": "SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
@@ -22,7 +22,7 @@
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul",
-        "preinstall": "node src/package/install.js"
+        "preinstall": "src/package/preinstall.sh"
     },
     "repository": {
         "type": "git",
