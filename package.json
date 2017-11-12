@@ -11,10 +11,10 @@
     "description": "SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^1.1.633-225",
+        "corifeus-utils": "^1.1.634-227",
         "dbus": "^1.0.1",
         "millisecond": "^0.1.2",
-        "moment": "^2.19.1",
+        "moment": "^2.19.2",
         "nodemailer": "^4.4.0"
     },
     "devDependencies": {
