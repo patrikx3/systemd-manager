@@ -30,7 +30,7 @@ const install = async() => {
         console.warn(`This is a Travis build, so apt install is not required.`)
     } else {
         console.warn(`You probably might need a c++11 if it is old.`)
-        await utils.childProcess.exec(`sudo apt-get install libdbus-1-dev libglib2.0-dev`, true)
+        await utils.childProcess.exec(`sudo apt-get install -y libdbus-1-dev libglib2.0-dev`, true)
     }
 
 
