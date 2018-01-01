@@ -18,7 +18,7 @@
         "nodemailer": "^4.4.1"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.7.1103-260"
+        "corifeus-builder": "^1.7.1110-261"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul",
