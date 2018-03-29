@@ -5,20 +5,20 @@
         "publish": true,
         "type": "p3x",
         "code": "Flap",
-        "nodejs": "v9.9.0"
+        "nodejs": "v9.10.0"
     },
-    "version": "1.1.700-292",
+    "version": "1.1.708-294",
     "description": "SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^1.1.884-315",
+        "corifeus-utils": "^1.1.894-317",
         "dbus": "^1.0.3",
         "millisecond": "^0.1.2",
         "moment": "^2.21.0",
         "nodemailer": "^4.6.3"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.7.1267-331"
+        "corifeus-builder": "^1.7.1275-333"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul",
