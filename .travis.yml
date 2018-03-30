@@ -1,23 +1,22 @@
 language: node_js
-
 node_js:
-  - "node"
+- node
 env:
+  matrix:
   - CXX=g++-4.8
-
+  global:
+    secure: NqTTp1u3TtOB8SE0pbRSHsnQQ8tTvqXt8Py1XyoZVO4WgYuilYMGAbRb+pbwM7lM84QyuBFeYVzy4/Ai1OYP2AoV7JmYR0zZzAutwy+gTJd7Kxjoe42i0Q18rItT7rjNJ1ppw98iiyy6n4Q/Aa8+xYvV64GuOsZEYzO8d/hU179ABMS3Q2sP2yqWwFp5RNpy1O21pO0zjyCz0aiG0/i1bilKem2SYIvUF6zfJ27jYbAhEZhWYpGr4QllF6R5ZHuWUY6sYCStXX/CfK2MO3EixQwxQw13oqhvDZDqKAtlAAJsHfZdmXfVGHokErJhC0i3alUSWkXbJSzd13p2rY5krZIeRw0Ok4C1Ytyy+lnt8pOKQ9i2cSFhxt2PgLZYZKu/Yum4PbGL7B1v8LgPUFjpFzNnN5W1HMeWMgMdxHthR8WHmseCjB29OaF8JD5JIW20qnIxssfXIFn4983D18ZCFf8myGJ0XWini90TRTi4AGfh1CQ57eRO9I7fVONhs9HRY4fJ8rW4bvFDvACo2+Smw6KRuQSstphoFwNUt+3kfA2Tkiaj834P9IxP4gTFfWBBoaAmyqsSrUlMkbq0r54KlkOful+ki4GS5aBgiAJYf92PJRRy9mp8R3Dk3NKMSjTr+IgdtWst5e+oC0+feccOzMT5DxeRuoENteJxojbqBSg=
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-# order is important!
-      - dbus
-      - dbus-x11
-      - gcc-4.8
-      - g++-4.8
-      - libdbus-1-dev
-      - libglib2.0-dev
-
+    - dbus
+    - dbus-x11
+    - gcc-4.8
+    - g++-4.8
+    - libdbus-1-dev
+    - libglib2.0-dev
 before_script:
-  - npm install -g node-gyp
-  - npm install grunt-cli -g
+- npm install -g node-gyp
+- npm install grunt-cli -g
