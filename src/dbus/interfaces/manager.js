@@ -28,7 +28,7 @@ class Manager extends Interface {
         })
     }
 
-    async getUnit(unitName, options = this.options) {
+    getUnit(unitName, options = this.options) {
         return new Promise((resolve, reject) => {
             this.manager.GetUnit(unitName, options, (error, unitNode) => {
                 if (error) {

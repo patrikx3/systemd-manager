@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 const os = require('os');
 const process = require('process');
+/*
 const cores = os.cpus().length < 4 ? 4 : os.cpus().length;
 process.env.UV_THREADPOOL_SIZE = cores;
 console.debug(`P3X sets UV_THREADPOOL_SIZE to ${cores} thread pool`)
+*/
 
 const lib = require('./src/lib');
 const settings = lib.getSettings();

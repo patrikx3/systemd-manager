@@ -25,7 +25,7 @@ class Interface {
         })
     }
 
-    async prop(prop) {
+    prop(prop) {
         return new Promise((resolve, reject) => {
             this.manager.getProperty(prop, (err, value) => {
                 if (err) {
