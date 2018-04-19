@@ -6,7 +6,7 @@
 
 
  
-# SystemD Manager, watchdog, notifier and service v1.1.744-316  
+# ⌚ SystemD Manager, watchdog, notifier and service v1.1.744-316  
 
 This is an open-source project. Star this repository if you like it, or even donate!  Thank you so much! :)
 

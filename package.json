@@ -8,7 +8,7 @@
         "nodejs": "v9.11.1"
     },
     "version": "1.1.744-316",
-    "description": "SystemD Manager, watchdog, notifier and service",
+    "description": "⌚ SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
         "corifeus-utils": "^1.1.946-341",
