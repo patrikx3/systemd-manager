@@ -7,18 +7,18 @@
         "code": "Flap",
         "nodejs": "v9.11.1"
     },
-    "version": "1.1.739-313",
+    "version": "1.1.744-316",
     "description": "SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^1.1.940-338",
+        "corifeus-utils": "^1.1.946-341",
         "dbus": "^1.0.3",
         "millisecond": "^0.1.2",
         "moment": "^2.22.1",
         "nodemailer": "^4.6.4"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.7.1316-355"
+        "corifeus-builder": "^1.7.1322-358"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul",
