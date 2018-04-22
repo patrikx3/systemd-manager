@@ -6,7 +6,7 @@
 
 
  
-# ⌚ SystemD Manager, watchdog, notifier and service v1.1.749-320  
+# ⌚ SystemD Manager, watchdog, notifier and service v1.1.753-322  
 
 This is an open-source project. Star this repository if you like it, or even donate!  Thank you so much! :)
 
@@ -78,7 +78,7 @@ npm install p3x-systemd-manager --save
 
 #### SystemD DBus Notifier
 
-```javascript
+```js
 #!/usr/bin/env node
 const systemd = require('p3x-systemd-manager');
 const settings = systemd.lib.getSettings();
@@ -93,7 +93,7 @@ systemd.notifier(settings);
 This notifies changes in the SystemD via e-mail.
 Right now it polls, so that it gets all changes. It task about 30-50 milliseconds per run on my 3.3 GHz Pentium 2 cores, not too much. All automatic, requires email and a few tweaks as you want.
 
-```javascript
+```js
 const Watchdog = require('p3x-systemd-manager').watchdog;
 const settings = require('./settings.json');
 const watchdog = Watchdog(settings);
@@ -196,7 +196,7 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 
 ---
 
-[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.749-320 
+[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.753-322 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
