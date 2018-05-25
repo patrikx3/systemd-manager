@@ -6,7 +6,7 @@
 
 
  
-# ⌚ SystemD Manager, watchdog, notifier and service v1.1.796-352  
+# ⌚ SystemD Manager, watchdog, notifier and service v1.1.799-353  
 
 This is an open-source project. Star this repository if you like it, or even donate!  Thank you so much! :)
 
@@ -14,7 +14,7 @@ I run my own server with dynamic IP address so it may happen that the server can
 
 All my domains (patrikx3.com and corifeus.com) could have errors since I am developing in my free time. However, it is usually stable.
 
-**Bugs are evident.™️**
+**Bugs are evident™ - MATRIX️**
 
 ### Node Version Requirement 
 ``` 
@@ -197,7 +197,7 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 
 ---
 
-[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.796-352 
+[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v1.1.799-353 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
