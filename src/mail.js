@@ -27,7 +27,7 @@ module.exports = (settings) => {
 
         if (typeof body !== 'string') {
             body = momentify(body);
-            body = JSON.stringify(body, null, 2);
+            body = JSON.stringify(body, null, 4);
         } else {
             body = `
 ${moment().format(settings.moment)}
