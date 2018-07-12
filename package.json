@@ -10,7 +10,7 @@
         "reponame": "systemd-manager",
         "build": true
     },
-    "version": "1.1.804-359",
+    "version": "1.1.806-363",
     "description": "⌚ SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
@@ -22,7 +22,7 @@
         "nodemailer": "^4.6.7"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.8.35-434"
+        "corifeus-builder": "^1.8.37-440"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul",
