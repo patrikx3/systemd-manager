@@ -10,11 +10,11 @@
         "reponame": "systemd-manager",
         "build": true
     },
-    "version": "2019.3.18-2",
+    "version": "2019.4.5",
     "description": "⌚ SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^2019.3.10-1",
+        "corifeus-utils": "^2019.4.6",
         "dbus": "^1.0.3",
         "lodash": "^4.17.11",
         "millisecond": "^0.1.2",
@@ -22,7 +22,7 @@
         "nodemailer": "^5.1.1"
     },
     "devDependencies": {
-        "corifeus-builder": "^2019.3.10-1"
+        "corifeus-builder": "^2019.4.6"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul",
