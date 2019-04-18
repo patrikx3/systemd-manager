@@ -5,24 +5,24 @@
         "publish": true,
         "type": "p3x",
         "code": "Flap",
-        "nodejs": "v11.13.0",
+        "nodejs": "v11.14.0",
         "opencollective": false,
         "reponame": "systemd-manager",
         "build": true
     },
-    "version": "2019.4.8",
+    "version": "2019.4.11",
     "description": "⌚ SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^2019.4.10",
+        "corifeus-utils": "^2019.4.13",
         "dbus": "^1.0.3",
         "lodash": "^4.17.11",
         "millisecond": "^0.1.2",
         "moment": "^2.24.0",
-        "nodemailer": "^6.0.0"
+        "nodemailer": "^6.1.0"
     },
     "devDependencies": {
-        "corifeus-builder": "^2019.4.9"
+        "corifeus-builder": "^2019.4.12"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul",
