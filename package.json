@@ -5,24 +5,24 @@
         "publish": true,
         "type": "p3x",
         "code": "Breaking",
-        "nodejs": "v12.4.0",
+        "nodejs": "v12.6.0",
         "opencollective": false,
         "reponame": "systemd-manager",
         "build": true
     },
-    "version": "2019.4.109",
+    "version": "2019.10.104",
     "description": "⌚ SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^2019.4.106",
+        "corifeus-utils": "^2019.10.104",
         "dbus": "^1.0.5",
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.14",
         "millisecond": "^0.1.2",
         "moment": "^2.24.0",
         "nodemailer": "^6.2.1"
     },
     "devDependencies": {
-        "corifeus-builder": "^2019.4.111"
+        "corifeus-builder": "^2019.10.107"
     },
     "scripts": {
         "test": "dbus-launch grunt mocha_istanbul",
@@ -50,6 +50,6 @@
     },
     "homepage": "https://pages.corifeus.com/systemd-manager",
     "engines": {
-        "node": ">=10.13.0"
+        "node": ">=10.16.0"
     }
 }

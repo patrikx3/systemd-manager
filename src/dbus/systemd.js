@@ -7,9 +7,9 @@ const DBus = require('dbus');
 let bus;
 const defaults = {
     _interface: {
-      system: 'org.freedesktop.systemd1',
-      node: '/org/freedesktop/systemd1',
-      _interface: 'org.freedesktop.systemd1.Manager'
+        system: 'org.freedesktop.systemd1',
+        node: '/org/freedesktop/systemd1',
+        _interface: 'org.freedesktop.systemd1.Manager'
     },
     options: {
         timeout: 1000
@@ -28,7 +28,7 @@ const getInterface = async (
     system = defaults._interface.system) => {
 
     process.env.DISPLAY = settings.dbus.display;
-    if (process.env.DBUS_SESSION_BUS_ADDRESS  === undefined) {
+    if (process.env.DBUS_SESSION_BUS_ADDRESS === undefined) {
         process.env.DBUS_SESSION_BUS_ADDRESS = settings.dbus.address;
     }
 

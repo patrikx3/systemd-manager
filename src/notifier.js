@@ -13,7 +13,7 @@ module.exports = async (settings) => {
     const debug = () => {
         const eventHelper = (item) => {
             console.log(`Subscribe Event: ${item}`);
-            managerInterface.on(item, function() {
+            managerInterface.on(item, function () {
                 console.log(item);
                 console.log(arguments);
             })
@@ -24,7 +24,7 @@ module.exports = async (settings) => {
     const connect = async () => {
 
         const propertyInterfaces = [];
-        let unitDictionary  = await managerInterface.listUnits;
+        let unitDictionary = await managerInterface.listUnits;
 
         Object.keys(unitDictionary).forEach(async (unitId) => {
             if (filter.isValid(unitId)) {
@@ -40,8 +40,8 @@ module.exports = async (settings) => {
                 */
                 propertyInterfaces.push(propertyInterface);
 
-                propertyInterface.on('PropertiesChanged', async function(changedInterface, props, names) {
-                    if ( changedInterface === interfaces.unit.interfaceName) {
+                propertyInterface.on('PropertiesChanged', async function (changedInterface, props, names) {
+                    if (changedInterface === interfaces.unit.interfaceName) {
                         let trigger = false;
                         Object.keys(settings.filter.trigger).forEach((state) => {
                             if (settings.filter.trigger[state].includes(props[state])) {
@@ -68,7 +68,8 @@ module.exports = async (settings) => {
 
                     }
                 })
-            };
+            }
+            ;
         })
         return () => {
             propertyInterfaces.forEach((propertyInterface) => {
@@ -84,10 +85,10 @@ module.exports = async (settings) => {
 
     let kill;
     let reloadDebounce;
-    const reload = async function(reloading) {
+    const reload = async function (reloading) {
         //console.log(`Reloading: ${reloading}`);
         if (reloading) {
-           return;
+            return;
         }
         console.log('Debounced Reloading services');
         clearTimeout(reloadDebounce);

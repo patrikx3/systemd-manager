@@ -42,11 +42,11 @@ const boot = async (settings) => {
         console.log('Boot is enabled');
         const unitIds = Object.keys(units);
         const boot = {};
-        for(let unitId of unitIds) {
+        for (let unitId of unitIds) {
             if (filter.isValid(unitId)) {
                 const unit = await manager.getUnit(unitId);
                 const props = await unit.props;
-                for(let unitProp of Object.keys(settings.boot.trigger)) {
+                for (let unitProp of Object.keys(settings.boot.trigger)) {
                     if (settings.boot.trigger[unitProp].includes(props[unitProp])) {
                         boot[unitProp] = boot[unitProp] || {};
                         boot[unitProp][props[unitProp]] = boot[unitProp][props[unitProp]] || [];
@@ -61,7 +61,7 @@ const boot = async (settings) => {
             console.log(boot);
         }
 
-    } catch(e) {
+    } catch (e) {
         mail.send(e);
     }
 

@@ -18,7 +18,7 @@ module.exports = (settings) => {
 
         const dbUpdate = {};
         lines.forEach((line) => {
-            const [, unit, , load, , active , , sub, , description ]= parseRow.exec(line);
+            const [, unit, , load, , active, , sub, , description] = parseRow.exec(line);
             dbUpdate[unit] = {
                 unit: unit,
                 load: load,
@@ -38,7 +38,7 @@ module.exports = (settings) => {
         return new Promise((resolve, reject) => {
             exec(command, {
                 maxBuffer: 10 * 1024 * 1024
-            },  (error, stdout, stderr) => {
+            }, (error, stdout, stderr) => {
                 if (error) {
                     reject(error);
                     return;
@@ -56,7 +56,7 @@ module.exports = (settings) => {
         })
     }
 
-  /**
+    /**
      * The watch program.
      */
     const watch = async () => {
@@ -87,7 +87,7 @@ module.exports = (settings) => {
             Object.keys(dbUpdate).forEach((unit) => {
                 if (db[unit] === undefined && filter.isValid(unit)) {
                     watchUpdate.added[unit] = lib.clone(dbUpdate[unit]);
-                } else if (JSON.stringify(db[unit]) !== JSON.stringify(dbUpdate[unit]) && filter.isValid(unit) ) {
+                } else if (JSON.stringify(db[unit]) !== JSON.stringify(dbUpdate[unit]) && filter.isValid(unit)) {
                     watchUpdate.changes[unit] = {
                         'old': lib.clone(db[unit]),
                         'new': lib.clone(dbUpdate[unit]),
@@ -110,12 +110,12 @@ module.exports = (settings) => {
             })
             if (sendChanges === true) {
                 watchUpdate.moment = moment().format(settings.moment);
-                mail.send(`CHANGED`, watchUpdate );
+                mail.send(`CHANGED`, watchUpdate);
             }
-        } catch(error) {
+        } catch (error) {
             mail.send(`ERROR`, error);
         }
-        if (timeLastPing == undefined || Date.now() - timeLastPing > timePing ) {
+        if (timeLastPing == undefined || Date.now() - timeLastPing > timePing) {
             console.log(`ping - ${Object.keys(db).length} items - every ${timePingString}`);
             //console.log(db);
             timeLastPing = Date.now();
@@ -144,7 +144,7 @@ module.exports = (settings) => {
     let intervalString = settings.interval;
 
     const showStatus = () => {
-        if (settings.filter.type.length === 0 ) {
+        if (settings.filter.type.length === 0) {
             console.log(`watchdog all`)
         } else {
             console.log(`watchdog type(s): ${settings.filter.type.join(',')}`)
@@ -163,7 +163,6 @@ module.exports = (settings) => {
         status(`TEST MODE`);
     }
     showStatus();
-
 
 
     return {

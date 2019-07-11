@@ -4,7 +4,7 @@ const os = require('os');
 
 const pkg = require('../../package.json');
 
-const install = async() => {
+const install = async () => {
 
     const arch = os.arch();
     const platform = os.platform()

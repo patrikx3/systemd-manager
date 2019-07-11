@@ -37,7 +37,7 @@ const simpleFilter = (list, result) => {
         if (listRegexp.length === 0) {
             return result;
         }
-        for(let oneRegexp of listRegexp) {
+        for (let oneRegexp of listRegexp) {
             if (oneRegexp.test(filter)) {
                 return !result;
             }
@@ -55,14 +55,14 @@ const filter = (settings) => {
         }
     }
     let types = settings.filter.type || [];
-    if ( typeof types === 'string') {
+    if (typeof types === 'string') {
         types = [types];
     }
     const isType = (unitId) => {
         if (types.length === 0) {
             return true;
         }
-        for(let type of types) {
+        for (let type of types) {
             if (unitId.endsWith(`.${type}`)) {
                 return true;
             }
