@@ -25,7 +25,7 @@
         "corifeus-builder": "^2019.10.212"
     },
     "scripts": {
-        "test": "dbus-launch grunt mocha_istanbul",
+        "test": "grunt",
         "preinstall": "src/package/preinstall.sh"
     },
     "repository": {
