@@ -2,7 +2,9 @@ language: node_js
 cache:
     npm: false
 node_js:
-- node
+# after fix once nodejs 13 is working
+#- node
+    - '12'
 env:
   matrix:
   - CXX=g++-4.8
