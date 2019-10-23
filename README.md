@@ -40,7 +40,8 @@ https://nodejs.org/en/download/package-manager/
                         
 [//]: #@corifeus-header:end
 
-
+## Warning
+On NodeJS v13 it is broken right now.
 
 ## Use case
 Get a notification via e-mail when a SystemD service becomes failed.
