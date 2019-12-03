@@ -1,41 +1,41 @@
 [//]: #@corifeus-header
-  
+
 [![NPM](https://nodei.co/npm/p3x-systemd-manager.png?downloads=true&downloadRank=true)](https://www.npmjs.com/package/p3x-systemd-manager/)
 
   
 
-[![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://paypal.me/patrikx3) [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Corifeus @ Facebook](https://img.shields.io/badge/Facebook-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)  [![Build Status](https://api.travis-ci.com/patrikx3/systemd-manager.svg?branch=master)](https://travis-ci.com/patrikx3/systemd-manager) 
+[![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://paypal.me/patrikx3) [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Corifeus @ Facebook](https://img.shields.io/badge/Facebook-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)  [![Build Status](https://api.travis-ci.com/patrikx3/systemd-manager.svg?branch=master)](https://travis-ci.com/patrikx3/systemd-manager)
 [![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
 
- 
 
 
- 
-# ⌚ SystemD Manager, watchdog, notifier and service v2019.10.156  
 
-  
 
-**Bugs are evident™ - MATRIX️**  
+# ⌚ SystemD Manager, watchdog, notifier and service v2019.10.159
+
+
+
+**Bugs are evident™ - MATRIX️**
     
 
-### Node Version Requirement 
-``` 
->=10.16.0 
-```  
-   
-### Built on Node 
-``` 
-v12.13.0
-```   
-   
+### Node Version Requirement
+```
+>=10.16.0
+```
+
+### Built on Node
+```
+v12.13.1
+```
+
 The ```async``` and ```await``` keywords are required.
 
-Install NodeJs:    
-https://nodejs.org/en/download/package-manager/    
+Install NodeJs:
+https://nodejs.org/en/download/package-manager/
 
 
 
-# Description  
+# Description
 
                         
 [//]: #@corifeus-header:end
@@ -205,26 +205,24 @@ For SystemD DBus notifier you need to use root anyway. I think it cannot do anyt
 Possible, this server, rarely, is down, please, hang on for 15-30 minutes and the server will be back up.
 
 All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://corifeus.com)) could have minor errors, since I am developing in my free time. However, it is usually stable.
-    
-**Note about versioning:** Versions are cut in Major.Minor.Patch schema. Major is always the current year. Minor is either 4 (January - June) or 10 (July - December). Patch is incremental by every build. If there is a breaking change, it should be noted in the readme.  
+
+**Note about versioning:** Versions are cut in Major.Minor.Patch schema. Major is always the current year. Minor is either 4 (January - June) or 10 (July - December). Patch is incremental by every build. If there is a breaking change, it should be noted in the readme.
 
 
 ---
-  
-[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v2019.10.156 
 
-[![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
+[**P3X-SYSTEMD-MANAGER**](https://pages.corifeus.com/systemd-manager) Build v2019.10.159
+
+[![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
 
-## P3X Sponsors
+## P3X Sponsor
 
 [IntelliJ - The most intelligent Java IDE](https://www.jetbrains.com/?from=patrikx3)
-  
-[![JetBrains](https://cdn.corifeus.com/assets/svg/jetbrains-logo.svg)](https://www.jetbrains.com/?from=patrikx3) [![NoSQLBooster](https://cdn.corifeus.com/assets/png/nosqlbooster-70x70.png)](https://www.nosqlbooster.com/)
 
-[The Smartest IDE for MongoDB](https://www.nosqlbooster.com)
-  
-  
- 
+[![JetBrains](https://cdn.corifeus.com/assets/svg/jetbrains-logo.svg)](https://www.jetbrains.com/?from=patrikx3)
+
+
+
 
 [//]: #@corifeus-footer:end
