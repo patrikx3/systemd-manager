@@ -1,11 +1,11 @@
 
-@license p3x-systemd-manager v2019.10.159
+@license p3x-systemd-manager v2020.4.102
   
 ⌚ SystemD Manager, watchdog, notifier and service
 
 https://pages.corifeus.com/systemd-manager
 
-Copyright (c) 2019 Patrik Laszlo / P3X / Corifeus and contributors.
+Copyright (c) 2020 Patrik Laszlo / P3X / Corifeus and contributors.
 
 MIT License
 
