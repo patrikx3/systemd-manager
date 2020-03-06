@@ -3,8 +3,6 @@ cache:
     npm: false
 node_js:
 - node
-- 10
-- 12
 env:
   matrix:
   - CXX=g++-4.8
