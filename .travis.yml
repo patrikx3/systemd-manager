@@ -2,7 +2,7 @@ language: node_js
 cache:
     npm: false
 node_js:
-- node
+- lts/*
 env:
   matrix:
   - CXX=g++-4.8
