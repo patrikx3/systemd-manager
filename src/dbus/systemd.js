@@ -4,7 +4,7 @@ const DBus = require('dbus');
 //gdbus introspect --system --dest org.freedesktop.systemd1 --object-path /org/freedesktop/systemd1
 //https://www.freedesktop.org/wiki/Software/systemd/dbus/
 //https://github.com/Shouqun/node-dbus
-let bus;
+let bus
 const defaults = {
     _interface: {
         system: 'org.freedesktop.systemd1',
@@ -32,7 +32,7 @@ const getInterface = async (
         process.env.DBUS_SESSION_BUS_ADDRESS = settings.dbus.address;
     }
 
-    if (bus == undefined) {
+    if (bus === undefined) {
         bus = DBus.getBus('system')
     }
 
