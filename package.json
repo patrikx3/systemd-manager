@@ -5,16 +5,16 @@
         "publish": true,
         "type": "p3x",
         "code": "Breaking",
-        "nodejs": "v14.15.0",
+        "nodejs": "v14.15.1",
         "opencollective": false,
         "reponame": "systemd-manager",
         "build": true
     },
-    "version": "2020.10.129",
+    "version": "2020.10.132",
     "description": "⌚ SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^2020.10.136",
+        "corifeus-utils": "^2020.10.139",
         "dbus": "^1.0.7",
         "lodash": "^4.17.20",
         "millisecond": "^0.1.2",
@@ -22,7 +22,7 @@
         "nodemailer": "^6.4.16"
     },
     "devDependencies": {
-        "corifeus-builder": "^2020.10.144"
+        "corifeus-builder": "^2020.10.147"
     },
     "scripts": {
         "test": "grunt",
