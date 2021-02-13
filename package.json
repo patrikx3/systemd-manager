@@ -10,11 +10,11 @@
         "reponame": "systemd-manager",
         "build": true
     },
-    "version": "2021.4.104",
+    "version": "2021.4.107",
     "description": "⌚ SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "dependencies": {
-        "corifeus-utils": "^2021.4.102",
+        "corifeus-utils": "^2021.4.109",
         "dbus": "^1.0.7",
         "lodash": "^4.17.20",
         "millisecond": "^0.1.2",
@@ -22,7 +22,7 @@
         "nodemailer": "^6.4.18"
     },
     "devDependencies": {
-        "corifeus-builder": "^2021.4.115"
+        "corifeus-builder": "^2021.4.118"
     },
     "scripts": {
         "test": "grunt",
