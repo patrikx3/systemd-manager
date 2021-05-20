@@ -22,8 +22,8 @@ jobs:
                 # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
         steps:
-            - name: Install xmllint
-              run: sudo apt-get install dbus dbus-x11 gcc g++ libdbus-1-dev libglib2.0-dev
+            - name: Install Ubuntu dependencies
+              run: sudo apt-get install libdbus-1-dev libglib2.0-dev
             - uses: actions/checkout@v2
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
