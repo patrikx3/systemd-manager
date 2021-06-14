@@ -1,52 +1,55 @@
 {
-  "debug": false,
-  "filter": {
-    "type": ["service"],
-    "exclude": [],
-    "include": [],
-    "trigger": {
-      "SubState": [
-        "failed"
-      ]
-    }
-  },
-  "boot": {
-    "enabled": true,
-    "trigger": {
-      "SubState": ["failed"]
-    }
-  },
-  "moment": "LLL",
-  "prefix": "P3X-SYSTEMD-NOTIFIER",
-
-  "dbus": {
-    "address": "unix:path=/run/dbus/system_bus_socket",
-    "display": ":0"
-  },
-
-  "interval": "watchdog only",
-  "interval": "10 seconds",
-
-  "ping": "watchdog only",
-  "ping": "2 hours",
-
-  "sudo": "watchdog only",
-  "sudo": false,
-
-  "email": {
-    "to": "system@localhost",
-    "from": "system@localhost"
-  },
-  "nodemailer": {
-    "singleton": true,
-    "config": {
-      "host": "mail.localhost",
-      "port": 465,
-      "secure": true,
-      "auth": {
-        "user": "system@localhost",
-        "pass": "unknown"
-      }
-    }
-  }
+    "debug": false,
+    "filter": {
+        "type": [
+            "service"
+        ],
+        "exclude": [],
+        "include": [],
+        "trigger": {
+            "SubState": [
+                "failed"
+            ]
+        }
+    },
+    "boot": {
+        "enabled": true,
+        "trigger": {
+            "SubState": [
+                "failed"
+            ]
+        }
+    },
+    "moment": "LLL",
+    "prefix": "P3X-SYSTEMD-NOTIFIER",
+    "dbus": {
+        "address": "unix:path=/run/dbus/system_bus_socket",
+        "display": ":0"
+    },
+    "interval": "watchdog only",
+    "interval": "10 seconds",
+    "ping": "watchdog only",
+    "ping": "2 hours",
+    "sudo": "watchdog only",
+    "sudo": false,
+    "email": {
+        "to": "system@localhost",
+        "from": "system@localhost"
+    },
+    "nodemailer": {
+        "singleton": true,
+        "config": {
+            "host": "mail.localhost",
+            "port": 465,
+            "secure": true,
+            "auth": {
+                "user": "system@localhost",
+                "pass": "unknown"
+            }
+        }
+    },
+    "ignoreErrors": [
+        "The maximum number of pending replies per connection has been reached",
+        "No introspectable"
+    ]
 }

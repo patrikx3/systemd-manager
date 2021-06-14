@@ -6,6 +6,10 @@ let singletonInstance;
 
 module.exports = (settings) => {
 
+    if (!settings.hasOwnProperty('ignoreErrors')) {
+        settings.ignoreErrors = []
+    }
+
     if (settings.nodemailer.singleton && singletonInstance !== undefined) {
         return singletonInstance;
     }
@@ -20,9 +24,15 @@ module.exports = (settings) => {
                 timestamp: moment().format(settings.moment)
             }, js)
         }
+        console.log('settings.ignoreErrors', settings.ignoreErrors)
         if (body instanceof Error) {
-            body = JSON.parse(JSON.stringify(body, ["message", "arguments", "type", "name", 'stack']));
             console.error(body);
+            if (settings.ignoreErrors.includes(body.message)) {
+                console.warn('ignoring known messsage', body.message)
+                console.info('not sending e-mail')
+                return
+            }
+            body = JSON.parse(JSON.stringify(body, ["message", "arguments", "type", "name", 'stack']));
         }
 
         if (typeof body !== 'string') {
@@ -43,6 +53,7 @@ ${body}
             text: body
         };
         console.log(`send new mail subject: ${subject}`);
+        console.log('message', message)
         try {
             let transporter = nodemailer.createTransport(settings.nodemailer.config);
             const info = await transporter.sendMail(message);
