@@ -6,6 +6,21 @@ const lib = require('./lib');
 
 module.exports = async (settings) => {
 
+    process.on("unhandledRejection", (err, promise) => {
+        if (!settings.hasOwnProperty('ignoreErrors')) {
+            settings.ignoreErrors = []
+        }
+        if (settings.ignoreErrors.includes(err.message)) {
+            console.warn('ignoring known messsage', err.message)
+            console.info('no crash')
+            return
+        }
+
+        console.error(new Date().toLocaleString(), 'unhandledRejection', err, promise);
+        process.exit(1);
+    });
+
+
     const filter = lib.filter(settings);
     const mail = Mail(settings);
     let managerInterface = await dbus.manager.factory(settings);
