@@ -11,7 +11,7 @@ module.exports = async (settings) => {
             settings.ignoreErrors = []
         }
         if (settings.ignoreErrors.includes(err.message)) {
-            console.warn('ignoring known messsage', err.message)
+            console.warn('ignoring known messsage', err)
             console.info('no crash')
             return
         }
