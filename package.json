@@ -22,7 +22,7 @@
         "nodemailer": "^6.7.0"
     },
     "devDependencies": {
-        "corifeus-builder": "^2021.10.176"
+        "corifeus-builder": "^2021.10.181"
     },
     "scripts": {
         "test": "grunt",
