@@ -13,5 +13,6 @@
 *.log
 /corifeus-boot.json
 /secure
-/.github
 settings.json
+/.github
+/.vscode
