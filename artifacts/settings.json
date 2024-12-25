@@ -9,7 +9,12 @@
             "sysstat-collect",
             "systemd-tmpfiles-clean",
             "ua-timer",
-            "phpsessionclean"
+            "phpsessionclean",
+            "display-manager",
+            "motd-news",
+            "sysstat-summary",
+            "logrotate",
+            "dpkg-db-backup"
         ],
         "include": [],
         "trigger": {
