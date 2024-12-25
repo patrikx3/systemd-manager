@@ -6,7 +6,7 @@
 
 
 
-# ⌚ SystemD Manager, watchdog, notifier and service v2024.10.106
+# ⌚ SystemD Manager, watchdog, notifier and service v2024.10.107
 
 
 
@@ -60,7 +60,7 @@ With its **DBus-based architecture** and **async/await wrappers**, evolving and 
 
 ## Features and Details
 
-This is a lightweight yet robust solution for Linux/Unix/BSD environments (tested on Debian Testing). Key features include:
+This is a lightweight yet robust solution for Linux/Unix/BSD environments (tested on Debian Testing and Ubuntu). Key features include:
 
 - **Email Notifications:** Powered by NodeMailer, receive instant alerts for monitored services.
 - **Polling and Event-Based Monitoring:**
@@ -297,7 +297,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com) and [corifeus.com
 ---
 
 
-[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2024.10.106
+[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2024.10.107
 
  [![NPM](https://img.shields.io/npm/v/p3x-systemd-manager.svg)](https://www.npmjs.com/package/p3x-systemd-manager)  [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
