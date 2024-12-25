@@ -10,7 +10,7 @@
         "reponame": "systemd-manager",
         "build": true
     },
-    "version": "2024.10.105",
+    "version": "2024.10.106",
     "description": "⌚ SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "saved-dependencies": {
