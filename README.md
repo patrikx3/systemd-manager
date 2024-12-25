@@ -6,7 +6,7 @@
 
 
 
-# ⌚ SystemD Manager, watchdog, notifier and service v2024.10.102
+# ⌚ SystemD Manager, watchdog, notifier and service v2024.10.103
 
 
 
@@ -20,7 +20,7 @@
 ### Built on NodeJs version
 
 ```txt
-v22.3.0
+v22.12.0
 ```
 
 
@@ -145,16 +145,28 @@ system, also it's internal, no web interface for now.
 
 ```json
 {
+{
     "debug": false,
     "filter": {
         "type": [
             "service"
         ],
-        "exclude": [],
+        "exclude": [
+            "fwupd-refresh",
+            "sysstat-collect",
+            "systemd-tmpfiles-clean",
+            "ua-timer"
+        ],
         "include": [],
         "trigger": {
             "SubState": [
-                "failed"
+                "start-pre",
+                "start-post",
+                "stop-pre",
+                "stop-post",
+                "dead",
+                "failed",
+                "reload"
             ]
         }
     },
@@ -162,7 +174,14 @@ system, also it's internal, no web interface for now.
         "enabled": true,
         "trigger": {
             "SubState": [
-                "failed"
+                "running",
+                "start-pre",
+                "start-post",
+                "stop-pre",
+                "stop-post",
+                "dead",
+                "failed",
+                "reload"
             ]
         }
     },
@@ -172,16 +191,12 @@ system, also it's internal, no web interface for now.
         "address": "unix:path=/run/dbus/system_bus_socket",
         "display": ":0"
     },
-    
     "interval": "watchdog only",
     "interval": "10 seconds",
-    
     "ping": "watchdog only",
     "ping": "2 hours",
-    
     "sudo": "watchdog only",
     "sudo": false,
-    
     "email": {
         "to": "system@localhost",
         "from": "system@localhost"
@@ -257,7 +272,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com) and [corifeus.com
 ---
 
 
-[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2024.10.102
+[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2024.10.103
 
  [![NPM](https://img.shields.io/npm/v/p3x-systemd-manager.svg)](https://www.npmjs.com/package/p3x-systemd-manager)  [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

@@ -4,11 +4,22 @@
         "type": [
             "service"
         ],
-        "exclude": [],
+        "exclude": [
+            "fwupd-refresh",
+            "sysstat-collect",
+            "systemd-tmpfiles-clean",
+            "ua-timer"
+        ],
         "include": [],
         "trigger": {
             "SubState": [
-                "failed"
+                "start-pre",
+                "start-post",
+                "stop-pre",
+                "stop-post",
+                "dead",
+                "failed",
+                "reload"
             ]
         }
     },
@@ -16,7 +27,14 @@
         "enabled": true,
         "trigger": {
             "SubState": [
-                "failed"
+                "running",
+                "start-pre",
+                "start-post",
+                "stop-pre",
+                "stop-post",
+                "dead",
+                "failed",
+                "reload"
             ]
         }
     },
