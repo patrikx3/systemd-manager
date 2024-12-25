@@ -6,7 +6,7 @@
 
 
 
-# ⌚ SystemD Manager, watchdog, notifier and service v2024.10.103
+# ⌚ SystemD Manager, watchdog, notifier and service v2024.10.104
 
 
 
@@ -273,7 +273,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com) and [corifeus.com
 ---
 
 
-[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2024.10.103
+[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2024.10.104
 
  [![NPM](https://img.shields.io/npm/v/p3x-systemd-manager.svg)](https://www.npmjs.com/package/p3x-systemd-manager)  [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
