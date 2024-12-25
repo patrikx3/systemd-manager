@@ -6,7 +6,7 @@
 
 
 
-# ⌚ SystemD Manager, watchdog, notifier and service v2024.10.104
+# ⌚ SystemD Manager, watchdog, notifier and service v2024.10.105
 
 
 
@@ -32,25 +32,49 @@ v22.12.0
                         
 [//]: #@corifeus-header:end
 
-## Use case
+# SystemD Notifier
 
-Get a notification via e-mail when a SystemD service becomes failed. If you enable boot, every times to startup the
-notifier, it sends failed and not-found (trigger) services so you can remove them from SystemD and get cleaned.
+Stay informed about the status of your SystemD services with this notification tool. Designed for flexibility, this tool sends notifications (e.g., via email) when specific service states are detected, making it easier to manage and maintain clean and efficient SystemD configurations.
 
-Also it is easy to configure additional triggers like running, stopped or all the whole SystemD changes via LoadState /
-other properties and trigger a result / status and notify or add in different notifier like Twitter / Facebook etc.
+---
 
-### Evolve
+## Use Case
 
-It is easy to evolve the functions. I just created for my server to get failed services via notify e-mail, but if you
-need additional functions, please fork and pull. It is easy to add in anything or change services etc... All DBus based
-and async/await wrappers.
+Receive email notifications when a SystemD service enters a **failed** state. By enabling boot-time monitoring, the tool can report all failed or "not found" services on startup, allowing you to clean up or remove them from your SystemD configuration effortlessly.
 
-## Detailed
+Additionally, you can expand its functionality to track other service states such as **running**, **stopped**, or even monitor **all SystemD changes**. The tool leverages `LoadState` and other properties to trigger actions, enabling notifications or integrations with platforms like Twitter, Facebook, or custom alert systems.
 
-It is a Linux/Unix/BSD (tested only in Debian/Testing repo) based SystemD manager. Notifies via e-mail with NodeMailer,
-it polls via an interval as a watchdog. It also has a wrapper for DBus to manage services and via events as well if you
-do not like polling. I guess watchdog will be replaced 100%.
+---
+
+## Extensibility
+
+This notifier was initially developed to monitor and alert for failed services on my server via email. However, it is designed for easy customization:
+
+- **Fork & Pull:** Add new features or modify existing ones to suit your needs.
+- **Trigger Flexibility:** Configure it to monitor additional service states or actions.
+- **Integration:** Expand notifications beyond email (e.g., social platforms or messaging apps).
+
+With its **DBus-based architecture** and **async/await wrappers**, evolving and adapting the tool is straightforward.
+
+---
+
+## Features and Details
+
+This is a lightweight yet robust solution for Linux/Unix/BSD environments (tested on Debian Testing). Key features include:
+
+- **Email Notifications:** Powered by NodeMailer, receive instant alerts for monitored services.
+- **Polling and Event-Based Monitoring:**
+  - Default interval-based polling acts as a watchdog.
+  - Optional event-based DBus wrappers for real-time service management (ideal for reducing overhead).
+- **SystemD Management:** Handle services through DBus, enabling actions triggered by state changes.
+- **Clean Startup:** On boot, automatically report failed or missing services for easy maintenance.
+
+This tool is perfect for maintaining server reliability and cleanliness, with the potential to replace traditional watchdogs entirely.
+
+---
+
+Contributions are welcome! Fork the repository, add features, or improve functionality as needed.
+
 
 ## SystemD DBus Manager
 
@@ -273,7 +297,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com) and [corifeus.com
 ---
 
 
-[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2024.10.104
+[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2024.10.105
 
  [![NPM](https://img.shields.io/npm/v/p3x-systemd-manager.svg)](https://www.npmjs.com/package/p3x-systemd-manager)  [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
