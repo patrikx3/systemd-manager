@@ -155,7 +155,8 @@ system, also it's internal, no web interface for now.
             "fwupd-refresh",
             "sysstat-collect",
             "systemd-tmpfiles-clean",
-            "ua-timer"
+            "ua-timer",
+            "phpsessionclean"
         ],
         "include": [],
         "trigger": {

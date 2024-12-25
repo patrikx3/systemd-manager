@@ -8,7 +8,8 @@
             "fwupd-refresh",
             "sysstat-collect",
             "systemd-tmpfiles-clean",
-            "ua-timer"
+            "ua-timer",
+            "phpsessionclean"
         ],
         "include": [],
         "trigger": {
