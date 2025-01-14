@@ -7,7 +7,7 @@ let singletonInstance;
 module.exports = (settings) => {
 
     if (!settings.hasOwnProperty('ignoreErrors')) {
-        settings.ignoreErrors = []
+        settings.ignoreErrors = [];
     }
 
     if (settings.nodemailer.singleton && singletonInstance !== undefined) {
@@ -22,17 +22,17 @@ module.exports = (settings) => {
         const momentify = (js) => {
             return Object.assign({
                 timestamp: moment().format(settings.moment)
-            }, js)
-        }
-        console.log('settings.ignoreErrors', settings.ignoreErrors)
+            }, js);
+        };
+        console.log('settings.ignoreErrors', settings.ignoreErrors);
         if (body instanceof Error) {
             console.error(body);
             if (settings.ignoreErrors.includes(body.message)) {
-                console.warn('ignoring known messsage', body.message)
-                console.info('not sending e-mail')
-                return
+                console.warn('Ignoring known message:', body.message);
+                console.info('Not sending e-mail');
+                return;
             }
-            body = JSON.parse(JSON.stringify(body, ["message", "arguments", "type", "name", 'stack']));
+            body = JSON.parse(JSON.stringify(body, ["message", "arguments", "type", "name", "stack"]));
         }
 
         if (typeof body !== 'string') {
@@ -46,33 +46,36 @@ ${body}
 `;
         }
 
+        const htmlBody = `<pre>${body}</pre>`; // Wrapping content in <pre> tags for HTML
+
+        // Message object with only HTML content
         const message = {
             from: from,
             to: to,
             subject: subject,
-            text: body
+            html: htmlBody // HTML content only
         };
-        console.log(`send new mail subject: ${subject}`);
-        console.log('message', message)
+        console.log(`Sending new mail. Subject: ${subject}`);
+        console.log('Message:', message);
         try {
             let transporter = nodemailer.createTransport(settings.nodemailer.config);
             const info = await transporter.sendMail(message);
             console.log(info.response);
             transporter.close();
         } catch (e) {
-            console.log(`send error email`, message);
+            console.log(`Error while sending email`, message);
             console.error(e, message);
         }
-    }
+    };
 
     const factory = {
         send: (subject, body) => {
             if (body === undefined) {
                 body = subject;
                 if (body instanceof Error) {
-                    subject = 'error'
+                    subject = 'Error';
                 } else {
-                    subject = 'trigger'
+                    subject = 'Trigger';
                 }
             }
             subject = `${settings.prefix}: ${os.hostname()} - ${subject}`;
@@ -85,4 +88,4 @@ ${body}
     }
 
     return factory;
-}
+};

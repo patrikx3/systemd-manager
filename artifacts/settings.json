@@ -14,7 +14,16 @@
             "motd-news",
             "sysstat-summary",
             "logrotate",
-            "dpkg-db-backup"
+            "dpkg-db-backup",
+            "mdcheck_continue",
+            "mdmonitor-oneshot",
+            "apt-daily",
+            "man-db",
+            "packagekit",
+            "certbot",
+            "user-runtime-dir",
+            "user",
+            "update-notifier-download"
         ],
         "include": [],
         "trigger": {
@@ -45,7 +54,7 @@
         }
     },
     "moment": "LLL",
-    "prefix": "P3X-SYSTEMD-NOTIFIER",
+    "prefix": "[P3X]",
     "dbus": {
         "address": "unix:path=/run/dbus/system_bus_socket",
         "display": ":0"
