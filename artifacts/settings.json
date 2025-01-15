@@ -28,13 +28,8 @@
         "include": [],
         "trigger": {
             "SubState": [
-                "start-pre",
-                "start-post",
-                "stop-pre",
-                "stop-post",
                 "dead",
-                "failed",
-                "reload"
+                "failed"
             ]
         }
     },
@@ -42,14 +37,8 @@
         "enabled": true,
         "trigger": {
             "SubState": [
-                "running",
-                "start-pre",
-                "start-post",
-                "stop-pre",
-                "stop-post",
                 "dead",
-                "failed",
-                "reload"
+                "failed"
             ]
         }
     },

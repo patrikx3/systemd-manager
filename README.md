@@ -6,7 +6,7 @@
 
 
 
-# ⌚ SystemD Manager, watchdog, notifier and service v2025.4.112
+# ⌚ SystemD Manager, watchdog, notifier and service v2025.4.117
 
 
   
@@ -201,13 +201,8 @@ system, also it's internal, no web interface for now.
         "include": [],
         "trigger": {
             "SubState": [
-                "start-pre",
-                "start-post",
-                "stop-pre",
-                "stop-post",
                 "dead",
-                "failed",
-                "reload"
+                "failed"
             ]
         }
     },
@@ -215,14 +210,8 @@ system, also it's internal, no web interface for now.
         "enabled": true,
         "trigger": {
             "SubState": [
-                "running",
-                "start-pre",
-                "start-post",
-                "stop-pre",
-                "stop-post",
                 "dead",
-                "failed",
-                "reload"
+                "failed"
             ]
         }
     },
@@ -317,13 +306,8 @@ If you appreciate our work, consider ⭐ starring this repository or 💰 making
 
 ---
 
-### 🖥️ Server Availability  
-Our server may occasionally be down, but please be patient. Typically, it will be back online within 15-30 minutes. We appreciate your understanding.  
-
----
-
 ### 🌍 About My Domains  
-All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.hu](https://corifeus.hu), and [corifeus.com](https://corifeus.com), are developed in my spare time. While you may encounter minor errors, the sites are generally stable and fully functional.  
+All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](https://corifeus.eu), and [corifeus.com](https://corifeus.com), are developed in my spare time. While you may encounter minor errors, the sites are generally stable and fully functional.  
 
 ---
 
@@ -338,7 +322,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.hu](ht
 ---
 
 
-[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2025.4.112
+[**P3X-SYSTEMD-MANAGER**](https://corifeus.com/systemd-manager) Build v2025.4.117
 
  [![NPM](https://img.shields.io/npm/v/p3x-systemd-manager.svg)](https://www.npmjs.com/package/p3x-systemd-manager)  [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
