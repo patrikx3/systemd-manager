@@ -16,3 +16,8 @@
 settings.json
 /.github
 /.vscode
+agents/
+.claude/
+.codex/
+CLAUDE.md
+AGENTS.md

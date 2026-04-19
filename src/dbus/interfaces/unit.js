@@ -3,8 +3,8 @@ const Interface = require('./../Interface');
 
 class Unit extends Interface {
 
-    constructor(node, manager, options = systemd.defaults.options) {
-        super(manager, options);
+    constructor(node, manager, settings, options = systemd.defaults.options) {
+        super(manager, settings, options);
 
         this.node = node;
 
@@ -20,14 +20,14 @@ class Unit extends Interface {
 
 
     get notFound() {
-        return this.prop(this.summaryProp.LoadState)
+        return this.prop(this.summaryProps.LoadState)
             .then((value) => {
                 return value === 'not-found'
             })
     }
 
     get failed() {
-        return this.prop(this.summaryProp.ActiveState)
+        return this.prop(this.summaryProps.ActiveState)
             .then((value) => {
                 return value === 'failed'
             })

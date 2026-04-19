@@ -4,26 +4,58 @@ const process = require('process');
 const fs = require('fs');
 const path = require('path');
 
-const dirname = path.dirname(process.argv[1]);
-const basename = path.basename(process.argv[1]);
+const binaryPath = process.argv[1] || process.argv[0] || process.cwd();
+const dirname = path.dirname(binaryPath);
+const basename = path.basename(binaryPath);
 
 const getSettings = (cli = basename, settingsFile = 'settings.json') => {
-    let settings;
+    // 1) ENV override
+    const envPath = process.env.P3X_SYSTEMD_SETTINGS || process.env.P3X_SETTINGS;
 
+    // 2) CLI args
+    const args = process.argv.slice(2);
+    const argEq = args.find((a) => a.startsWith('--settings='));
+    const argIdx = args.findIndex((a) => a === '--settings' || a === '-s');
+
+    let providedPath;
+    if (envPath) {
+        providedPath = envPath;
+    } else if (argEq) {
+        providedPath = argEq.split('=')[1];
+    } else if (argIdx !== -1 && args[argIdx + 1]) {
+        providedPath = args[argIdx + 1];
+    } else if (args[0] && !args[0].startsWith('-')) {
+        // Backward compatibility: first non-flag argument is the path
+        providedPath = args[0];
+    }
+
+    // 3) Default next to the executable
     const defaultFile = `${dirname}/${settingsFile}`;
-    if (fs.existsSync(defaultFile)) {
-        settings = require(defaultFile);
-    } else if (process.argv.length < 3) {
+
+    const isProvided = !!providedPath;
+    let target = providedPath || (fs.existsSync(defaultFile) ? defaultFile : undefined);
+    if (!target) {
         console.log(`
-Please use an argument for the settings.
-For example:
-${cli} ${settingsFile}
+Please provide a settings file.
+Examples:
+  ${cli} ${settingsFile}
+  ${cli} --settings ./settings.json
+  P3X_SYSTEMD_SETTINGS=./settings.json ${cli}
 `);
         return false;
-    } else {
-        settings = require(`${dirname}/{process.argv[2]}`);
     }
-    return settings;
+
+    try {
+        // Support absolute or relative paths
+        if (!path.isAbsolute(target)) {
+            target = path.resolve(isProvided ? process.cwd() : dirname, target);
+        }
+        return require(target);
+    } catch (e) {
+        console.error(`Could not load settings from: ${target}`);
+        console.error(e);
+        return false;
+    }
 }
 
 const simpleFilter = (list, result) => {
@@ -33,7 +65,7 @@ const simpleFilter = (list, result) => {
     let listRegexp = list.map((exclude) => {
         return new RegExp(exclude, 'i');
     })
-    return isList = (filter) => {
+    return (filter) => {
         if (listRegexp.length === 0) {
             return result;
         }
@@ -71,7 +103,7 @@ const filter = (settings) => {
     }
 
     const isExcluded = simpleFilter(settings.filter.exclude || [], false);
-    const isIncluded = simpleFilter(settings.filter.included || [], true);
+    const isIncluded = simpleFilter(settings.filter.include || [], true);
 
     return {
         isType: isType,

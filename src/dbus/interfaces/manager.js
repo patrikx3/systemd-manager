@@ -34,7 +34,7 @@ class Manager extends Interface {
                 if (error) {
                     return reject(error);
                 }
-                resolve(unit.factory(unitNode));
+                resolve(unit.factory(unitNode, this.settings, this.options));
             });
         })
     }

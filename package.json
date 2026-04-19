@@ -1,16 +1,17 @@
 {
     "name": "p3x-systemd-manager",
     "corifeus": {
+        "icon": "fas fa-cog",
         "prefix": "p3x-",
         "publish": true,
         "type": "p3x",
         "code": "Breaking",
-        "nodejs": "v22.13.1",
+        "nodejs": "v24.14.1",
         "opencollective": false,
         "reponame": "systemd-manager",
         "build": true
     },
-    "version": "2025.4.123",
+    "version": "2026.4.100",
     "description": "⌚ SystemD Manager, watchdog, notifier and service",
     "main": "index.js",
     "saved-dependencies": {
@@ -24,8 +25,11 @@
         "lodash": "^4.17.21",
         "millisecond": "^0.1.2",
         "moment": "^2.30.1",
-        "nan": "^2.22.0",
-        "nodemailer": "^6.10.0"
+        "nan": "^2.23.0",
+        "nodemailer": "^7.0.9"
+    },
+    "resolutions": {
+        "nan": "2.23.0"
     },
     "devDependencies": {
         "corifeus-builder": "^2025.4.135"
@@ -33,6 +37,10 @@
     "scripts": {
         "test": "grunt",
         "preinstall-save": "src/package/preinstall.sh"
+    },
+    "bin": {
+        "p3x-systemd-notifier": "./notifier",
+        "p3x-systemd-watchdog": "./watchdog"
     },
     "repository": {
         "type": "git",

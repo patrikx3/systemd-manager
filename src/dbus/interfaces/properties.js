@@ -2,8 +2,8 @@ const systemd = require('./../systemd');
 const Interface = require('./../Interface');
 
 class Properties extends Interface {
-    constructor(node, manager, options = systemd.defaults.options) {
-        super(manager, options);
+    constructor(node, manager, settings, options = systemd.defaults.options) {
+        super(manager, settings, options);
         this.node = node;
     }
 }
