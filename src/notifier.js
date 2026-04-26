@@ -41,51 +41,55 @@ module.exports = async (settings) => {
         const propertyInterfaces = [];
         let unitDictionary = await managerInterface.listUnits;
 
-        Object.keys(unitDictionary).forEach(async (unitId) => {
-            if (filter.isValid(unitId)) {
-                const unit = await managerInterface.getUnit(unitId);
-                const properties = await unit.props;
-                const propertyInterface = await interfaces.properties.factory(unit.node, settings);
+        // Sequential: forEach(async) was firing every getUnit / props / interface
+        // factory call in parallel, which on Reloading bursts blew past
+        // dbus-daemon's max_replies_per_connection=128 cap and produced ~90+
+        // "max replies reached" warnings per burst.
+        for (const unitId of Object.keys(unitDictionary)) {
+            if (!filter.isValid(unitId)) {
+                continue;
+            }
+            const unit = await managerInterface.getUnit(unitId);
+            const properties = await unit.props;
+            const propertyInterface = await interfaces.properties.factory(unit.node, settings);
 
-                /*
-                let lastSubStates = {};
-                Object.keys(settings.filter.status).forEach((state) => {
-                    lastSubStates[state] = properties[state];
-                });
-                */
-                propertyInterfaces.push(propertyInterface);
+            /*
+            let lastSubStates = {};
+            Object.keys(settings.filter.status).forEach((state) => {
+                lastSubStates[state] = properties[state];
+            });
+            */
+            propertyInterfaces.push(propertyInterface);
 
-                propertyInterface.on('PropertiesChanged', async function (changedInterface, props, names) {
-                    if (changedInterface === interfaces.unit.interfaceName) {
-                        let trigger = false;
-                        Object.keys(settings.filter.trigger).forEach((state) => {
-                            if (settings.filter.trigger[state].includes(props[state])) {
-                                trigger = true;
-                            }
-                            /*
-                            if (props[state] !== lastSubStates[state]) {
-                            }
-                            */
-                        })
-                        if (!trigger) {
-                            return;
+            propertyInterface.on('PropertiesChanged', async function (changedInterface, props, names) {
+                if (changedInterface === interfaces.unit.interfaceName) {
+                    let trigger = false;
+                    Object.keys(settings.filter.trigger).forEach((state) => {
+                        if (settings.filter.trigger[state].includes(props[state])) {
+                            trigger = true;
                         }
                         /*
-                        Object.keys(settings.filter.trigger).forEach((state) => {
-                            lastSubStates[state] = props[state];
-                        })
+                        if (props[state] !== lastSubStates[state]) {
+                        }
                         */
-
-                        mail.send(unitId, {
-                            summary: await unit.summary,
-                            detailed: await unit.props
-                        });
-
+                    })
+                    if (!trigger) {
+                        return;
                     }
-                })
-            }
-            ;
-        })
+                    /*
+                    Object.keys(settings.filter.trigger).forEach((state) => {
+                        lastSubStates[state] = props[state];
+                    })
+                    */
+
+                    mail.send(unitId, {
+                        summary: await unit.summary,
+                        detailed: await unit.props
+                    });
+
+                }
+            })
+        }
         return () => {
             propertyInterfaces.forEach((propertyInterface) => {
                 propertyInterface.manager.removeAllListeners('PropertiesChanged');
